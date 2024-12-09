@@ -1,35 +1,161 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #1a1a1a;
-  height: 100vh;
+  background: linear-gradient(135deg, #050505, #0b0c10, #050505);
+  color: #c5c6c7;
+  font-family: "Orbitron", sans-serif;
+  padding: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-.container h1 {
-  color: #ff4d4d;  
-  font-size: 3rem;  
-  text-align: center;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 700;
-  text-shadow: 0 0 15px rgba(255, 77, 77, 0.7), 0 0 30px rgba(255, 77, 77, 0.5); 
-  animation: flicker 5s infinite alternate;  
+#mikasa-header {
+  color: #ff4747;
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px #ff4747, 0 0 12px #ff0000;
+  margin-bottom: 20px;
 }
 
-@keyframes flicker {
-  0% {
-    opacity: 1;
+#footer {
+  color: #ff4747;
+}
+
+#terminal {
+  border: 2px solid #ff4747;
+  border-radius: 10px;
+  box-shadow: 0 0 25px #ff4747, 0 0 10px rgba(255, 77, 77, 0.5);
+  background: linear-gradient(135deg, #0d1117, #161b22);
+  padding: 20px;
+  width: 90%;
+  max-width: 1000px;
+  height: 600px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  color: #c5c6c7;
+}
+
+#output p {
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+#output .command-result {
+  margin-top: 15px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.input-label {
+  color: #66fcf1;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+input.dynamic-input {
+  background-color: transparent;
+  color: whitesmoke;
+  border: none;
+  outline: none;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  margin-left: 10px;
+  caret-color: #FF4500;
+  flex: 1;
+}
+
+#output > div {
+  margin-bottom: 20px;
+}
+
+#output img {
+  border: 3px solid #45a29e;
+  border-radius: 5px;
+  max-width: 150px;
+  height: auto;
+  margin-right: 20px;
+  box-shadow: 0 0 10px #45a29e;
+}
+
+#output div > strong {
+  color: #FFD700;
+}
+
+#output div {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+#output div:hover {
+  color: #32CD32;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+#output div.error-message {
+  color: #ff5555;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  #terminal {
+    width: 95%;
+    height: 500px;
   }
-  50% {
-    opacity: 0.4;
+
+  #mikasa-header {
+    font-size: 2rem;
   }
-  100% {
-    opacity: 1;
+
+  input.dynamic-input {
+    font-size: 0.9rem;
   }
+}
+
+.first-line-prompt {
+  display: flex;
+  align-items: center;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  color: #6CA0DC;
+  margin-bottom: -15px;
+}
+
+.second-line-prompt {
+  display: flex;
+  align-items: center;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  color: #6CA0DC;
+  margin-top: -15px;
+}
+
+.prompt-symbol {
+  color: #FF6347;
+  margin-right: 5px;
+}
+
+.user-info {
+  color: #6CA0DC;
+  margin-left: 2px;
+}
+
+.directory {
+  color: #32CD32;
+  margin-left: 5px;
 }
